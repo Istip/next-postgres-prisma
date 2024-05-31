@@ -14,10 +14,10 @@ interface Props {
 
 export default function Post({ post }: Props) {
   return (
-    <div>
-      <h3>{post?.author?.name}</h3>
-      <h4>{post.title}</h4>
+    <li>
+      <h3 className="text-3xl">{post?.author?.name}</h3>
+      <h4 className="text-xl">{post.title}</h4>
       <p>{post.content}</p>
-    </div>
+    </li>
   );
 }
