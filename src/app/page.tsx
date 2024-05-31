@@ -1,3 +1,4 @@
+import Post from "@/components/Post";
 import prisma from "@/lib/prisma";
 
 async function getPosts() {
@@ -18,8 +19,15 @@ async function getPosts() {
 export default async function Home() {
   const posts = await getPosts();
 
-  // eslint-disable-next-line no-console
-  console.log("✅  posts:", posts);
+  return (
+    <>
+      <h1>Feed</h1>
 
-  return <h1>Feed</h1>;
+      <ul>
+        {posts.map((post) => (
+          <Post key={post.id} post={post} />
+        ))}
+      </ul>
+    </>
+  );
 }
