@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="antialiased scroll-smooth"
+      className="antialiased scroll-smooth text-zinc-300 bg-zinc-900"
       suppressHydrationWarning={true}
     >
       <body className={font.className}>{children}</body>
