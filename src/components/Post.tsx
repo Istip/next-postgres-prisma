@@ -15,10 +15,9 @@ interface Props {
 export default function Post({ post }: Props) {
   return (
     <div>
-      <h1>{post.title}</h1>
+      <h3>{post?.author?.name}</h3>
+      <h4>{post.title}</h4>
       <p>{post.content}</p>
-      <hr />
-      <small>By {post.author ? post.author.name : "Unknown author"}</small>
     </div>
   );
 }
