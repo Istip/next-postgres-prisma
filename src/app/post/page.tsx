@@ -8,7 +8,7 @@ export default function CreatePost() {
   const [post, setPost] = useState(emptyState);
 
   const inputStyles =
-    "p-4 border border-zinc-950 bg-zinc-900/50 rounded-xl w-full outline-none focus:ring-2 ring-sky-600";
+    "p-4 border border-zinc-950 bg-zinc-900/75 rounded-xl w-full outline-none focus:ring-2 ring-sky-600";
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
