@@ -1,25 +1,7 @@
-import Post from "@/components/Post";
-import prisma from "@/lib/prisma";
 import Link from "next/link";
+import Posts from "@/components/Posts";
 
-async function getPosts() {
-  const posts = await prisma.post.findMany({
-    where: { published: true },
-    include: {
-      author: {
-        select: {
-          name: true,
-        },
-      },
-    },
-  });
-
-  return posts;
-}
-
-export default async function Home() {
-  const posts = await getPosts();
-
+export default function Home() {
   return (
     <div className="grid place-items-center">
       <div className="container flex justify-between items-center p-5">
@@ -28,11 +10,7 @@ export default async function Home() {
           Add a new Post
         </Link>
       </div>
-      <ul>
-        {posts.map((post) => (
-          <Post key={post.id} post={post} />
-        ))}
-      </ul>
+      <Posts />
     </div>
   );
 }
