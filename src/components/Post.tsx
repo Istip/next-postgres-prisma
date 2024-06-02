@@ -20,7 +20,7 @@ export default function Post({ post }: Props) {
       <h3 className="text-3xl">{post?.author?.name}</h3>
       <h4 className="text-xl">{post.title}</h4>
       <p>{post.content}</p>
-      <DeletePost postId={post.id} />
+      <DeletePost id={post.id} />
     </li>
   );
 }
